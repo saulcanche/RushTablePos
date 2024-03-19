@@ -54,8 +54,22 @@ Este documento proporciona una descripción completa del proyecto, detallando in
 ### 1.1 Propósito del Documento
 Describir el propósito del SRS y su audiencia prevista.
 
+El propósito principal de este documento es proporcionar una descripción detallada y completa del proyecto, abordando aspectos relevantes para cada área involucrada en su desarrollo y ejecución, desde los programadores hasta el equipo de marketing. Se busca crear una guía integral que cubra todos los aspectos esenciales del proyecto, estableciendo claramente los requisitos y objetivos que se persiguen. La intención es brindar una referencia detallada que permita comprender y ejecutar eficientemente todas las etapas del proyecto, promoviendo así la coherencia y la efectividad en su implementación. Este documento servirá como un recurso fundamental para alinear las expectativas, facilitar la comunicación entre los diferentes equipos y garantizar el éxito general del proyecto.
+
 ### 1.2 Alcance del Producto
 Identificar el producto cuyos requisitos de software se especifican en este documento, incluido el número de revisión o versión. Explicar lo que hará el producto cubierto por este SRS, especialmente si este SRS describe solo parte del sistema o un subsistema único. Proporcionar una breve descripción del software que se está especificando y su propósito, incluidos los beneficios relevantes, objetivos y metas. Relacionar el software con los objetivos corporativos o estrategias comerciales. Si hay disponible un documento de visión y alcance separado, haga referencia a él en lugar de duplicar su contenido aquí.
+
+El producto abordado por este documento es el Sistema de Punto de Venta (POS) diseñado específicamente para un restaurante. Este POS proporcionará una amplia gama de características y herramientas amigables para el usuario, destinadas a facilitar una gestión empresarial eficiente. Se centrará en agilizar las operaciones diarias del restaurante, organizar los datos y simplificar las tareas cotidianas, al tiempo que potencia el potencial de la organización.
+
+El propósito principal del software es mejorar la eficiencia operativa del restaurante al reducir la necesidad de recuentos de inventario manuales y procesos largos mediante herramientas de automatización inteligentes e integradas. Además, el POS permitirá registrar transacciones, generar informes regulares sobre las métricas comerciales, ajustar precios, controlar aspectos financieros y completar otras tareas esenciales con precisión tecnológica.
+
+El sistema también simplificará las operaciones al proporcionar capacidades de control de stock eficientes, reduciendo la necesidad de mano de obra manual y manteniendo actualizados los requisitos de stock. Además, ofrecerá la capacidad de crear grupos y enviar facturas a clientes, con recordatorios automáticos, informes digitales, gestión de nóminas y más.
+
+En términos de rendimiento, el POS reducirá el riesgo de errores humanos y ahorrará tiempo mediante características como quioscos de autoservicio, recuentos de inventario automatizados y programación de empleados, permitiendo a los empleados centrarse en el servicio al cliente.
+
+Además, proporcionará información valiosa sobre el comportamiento del cliente y ayudará a identificar ventajas y desventajas de la empresa para desarrollar estrategias comerciales sólidas. Las integraciones de terceros mejorarán aún más el rendimiento de las herramientas existentes.
+
+En cuanto a la seguridad, el POS realizará copias de seguridad de datos regularmente, ofrecerá pagos compatibles con PCI, puntos de venta seguros y encriptación de datos, garantizando la seguridad contra hackeos maliciosos y otras amenazas.
 
 ### 1.3 Definiciones, Acrónimos y Abreviaturas
 
