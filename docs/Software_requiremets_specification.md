@@ -49,8 +49,8 @@ Tabla de Contenidos
 |      |         |                     |           |
 
 ## 1. Introducción
-> Esta sección debería proporcionar una descripción general de todo el documento.
-
+> (Esta sección debería proporcionar una descripción general de todo el documento).
+Este documento proporciona una descripción completa del proyecto, detallando información relevante para cada área involucrada, incluyendo programadores, equipo de testeo, diseñador de interfaz de usuario (UI), equipo de marketing, entre otros. Un sistema de punto de venta eficiente es esencial para cualquier negocio, ya que optimiza las operaciones diarias, desde el registro de ventas hasta la gestión del inventario y la generación de informes financieros. Por lo tanto, es crucial definir claramente los requisitos y objetivos del software de punto de venta para garantizar su desarrollo y funcionamiento exitosos. Este documento servirá como guía integral para comprender y ejecutar el proyecto de manera eficiente y efectiva.
 ### 1.1 Propósito del Documento
 Describir el propósito del SRS y su audiencia prevista.
 
