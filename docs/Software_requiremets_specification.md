@@ -85,9 +85,34 @@ Describir lo que contiene el resto del documento y cómo está organizado.
 ### 2.1 Perspectiva del Producto
 Describir el contexto y el origen del producto que se especifica en este SRS. Por ejemplo, indique si este producto es un miembro de seguimiento de una familia de productos, un reemplazo para ciertos sistemas existentes o un producto nuevo y autocontenido. Si el SRS define un componente de un sistema más grande, relacione los requisitos del sistema más grande con la funcionalidad de este software e identifique las interfaces entre los dos. Un diagrama simple que muestre los componentes principales del sistema general, las interconexiones de los subsistemas y las interfaces externas puede ser útil.
 
+En el ámbito de la industria gastronómica, un sistema de punto de venta (POS) para restaurantes se erige como una herramienta esencial para optimizar la eficiencia y la productividad del negocio. Al fusionar interfaces amigables con funciones avanzadas de gestión, estos sistemas agilizan la toma de pedidos, el marketing, la gestión de inventarios y el análisis empresarial. 
+
 ### 2.2 Funciones del Producto
 Resumir las principales funciones que el producto debe realizar o permitir al usuario realizar. Los detalles se proporcionarán en la Sección 3, por lo que aquí solo se necesita un resumen de alto nivel (como una lista con viñetas). Organice las funciones para que sean comprensibles para cualquier lector del SRS. Una imagen de los principales grupos de requisitos relacionados y cómo se relacionan, como un diagrama de flujo de datos de nivel superior o un diagrama de clase de objetos, a menudo es efectiva.
 
+Los sistemas POS modernos están diseñados con la premisa de ofrecer una experiencia de usuario fluida y eficaz. Facilitan a los empleados del restaurante la ejecución rápida y precisa de pedidos, al tiempo que permiten la recopilación de información relevante de los clientes para estrategias de marketing dirigidas. Destaca también la gestión de inventario automatizada, que actualiza los recuentos de existencias con cada venta, optimizando así el control de inventarios y reduciendo el tiempo dedicado a tareas administrativas.
+
+Interfaz fácil de usar:
+
+La usabilidad es fundamental para un sistema POS exitoso. Debe contar con una interfaz intuitiva y fácil de navegar para que el personal pueda realizar transacciones sin esfuerzo y con mínimos errores. Funciones como compatibilidad con pantalla táctil y diseños personalizables son aspectos a tener en cuenta.
+Gestión de inventario:
+
+Una gestión eficiente del inventario es esencial para mantener un equilibrio óptimo de existencias y evitar problemas como la falta o el exceso de productos. El POS debe permitirle realizar un seguimiento en tiempo real del inventario, configurar reordenamientos automáticos y gestionar proveedores de manera efectiva.
+Informes y análisis de ventas:
+
+La capacidad de generar informes detallados y analizar las ventas es crucial para comprender el rendimiento del negocio. El sistema POS debe ofrecer insights sobre tendencias de ventas, productos más populares y comportamiento del cliente, lo que le permite tomar decisiones informadas para mejorar la rentabilidad.
+Capacidades de integración:
+
+Es fundamental que el sistema POS se integre sin problemas con otros software utilizados en el negocio, como herramientas de contabilidad, gestión de relaciones con el cliente (CRM) y plataformas de comercio electrónico. La integración facilita el intercambio de datos entre sistemas y mejora la eficiencia operativa.
+Procesamiento de pagos:
+
+La capacidad de procesar pagos de manera eficiente es esencial para la satisfacción del cliente. El sistema POS debe admitir una variedad de métodos de pago y garantizar transacciones rápidas y seguras para reducir los tiempos de espera y proteger la información del cliente.
+Seguridad y cumplimiento:
+
+La seguridad de los datos es una prioridad. El sistema POS debe cumplir con estándares y regulaciones de la industria para proteger la información sensible del cliente. Funciones como encriptación de extremo a extremo y controles de acceso garantizan la seguridad de los datos.
+Escalabilidad:
+
+Al elegir un sistema POS, es importante considerar la capacidad de escalabilidad para adaptarse al crecimiento del negocio. La solución debe ser flexible y permitir la expansión sin dificultades técnicas significativas.
 ### 2.3 Restricciones del Producto
 Esta subsección debería proporcionar una descripción general de cualquier otro elemento que limite las opciones del desarrollador. Estos pueden incluir:
 * Interfaces a usuarios, otras aplicaciones o hardware.
@@ -95,16 +120,80 @@ Esta subsección debería proporcionar una descripción general de cualquier otr
 * Cumplimiento de estándares.
 * Restricciones en torno al diseño o implementación.
 
+El sistema de punto de venta (POS) para restaurantes se enfrenta a varias restricciones que limitan las opciones de desarrollo y funcionamiento. Estas restricciones son fundamentales para garantizar un funcionamiento óptimo y seguro del sistema en el entorno restaurantero. A continuación, se detallan algunas de las restricciones más relevantes:
+
+* **Nivel de Conocimiento de los Usuarios**: Una restricción importante es que no todos los usuarios del sistema, especialmente los meseros, tienen un gran conocimiento técnico. Por lo tanto, el sistema debe ser intuitivo y fácil de usar, con una interfaz de usuario clara y sencilla que requiera un mínimo de capacitación para su operación.
+
+* **Autoridad de los Meseros**: Los meseros no deben tener total autoridad sobre el sistema, ya que podrían realizar acciones indebidas o acceder a funciones sensibles. Se requiere un control de acceso adecuado para garantizar que cada usuario tenga los permisos adecuados según su rol en el restaurante.
+
+* **Necesidad de Supervisión Gerencial**: Debido a la naturaleza crítica de las operaciones del restaurante, es fundamental que el sistema cuente con la supervisión adecuada de los gerentes. Los gerentes deben tener acceso a funciones avanzadas de gestión y reportes para monitorear el desempeño del restaurante y tomar decisiones informadas.
+
+* **Velocidad de Operación**: En el ámbito restaurantero, la velocidad es esencial para brindar un servicio de calidad. El sistema POS debe ser rápido y ágil, capaz de procesar pedidos y transacciones de manera eficiente para evitar retrasos y garantizar la satisfacción del cliente.
+
+* **Cumplimiento con los Estándares de la Industria**: El sistema debe cumplir con los estándares de la industria restaurantera, incluido el manejo de comandas, la terminología específica del sector y los procedimientos operativos comunes en los restaurantes. Esto garantiza una integración suave con las prácticas establecidas y facilita la adopción del sistema por parte del personal.
+
+Al considerar estas restricciones, el diseño y la implementación del sistema POS deben priorizar la facilidad de uso, la seguridad, la eficiencia operativa y el cumplimiento con los estándares de la industria gastronómica. Estas consideraciones son fundamentales para garantizar el éxito y la aceptación del sistema en el entorno restaurantero.
+
+
+
+
 ### 2.4 Características del Usuario
 Identificar las diversas clases de usuarios que se anticipa que utilizarán este producto. Las clases de usuarios pueden diferenciarse según la frecuencia de uso, el subconjunto de funciones del producto utilizadas, la experiencia técnica, los niveles de seguridad o privilegio, el nivel educativo o la experiencia. Describir las características pertinentes de cada clase de usuario. Es posible que ciertos requisitos se refieran solo a ciertas clases de usuarios. Distinguir las clases de usuarios más importantes para este producto de las menos importantes para satisfacer.
 
+Los principales usuarios de los sistemas POS son los propietarios, administradores y personal de servicio del restaurante. Estos se benefician de las funciones intuitivas y las herramientas de análisis empresarial para la toma de decisiones informadas que ofrecen estos sistemas.
+El sistema de punto de venta (POS) para restaurantes está diseñado para atender a diversas clases de usuarios que desempeñan roles específicos dentro del establecimiento gastronómico. A continuación, se describen las características y funciones principales de cada clase de usuario:
+
+#### 1. Mesero:
+- **Descripción**: Los meseros son usuarios clave en el sistema POS, responsables de tomar pedidos, registrar pagos, administrar mesas y garantizar la satisfacción del cliente.
+- **Funciones Principales**:
+  - Registrar pagos de cuentas.
+  - Ingresar pedidos de los clientes.
+  - Imprimir cuentas para los clientes.
+  - Administrar sus mesas y cuentas asociadas.
+  - Verificar la disponibilidad de productos en el inventario.
+  - Consultar horarios y registrar entradas y salidas.
+- **Nivel Educativo y Técnico**: Los meseros no requieren un nivel educativo avanzado ni conocimientos técnicos especializados. Se espera que puedan operar el sistema con un mínimo de capacitación.
+
+#### 2. Supervisor de Piso:
+- **Descripción**: Los supervisores de piso tienen un rol de supervisión y control sobre las operaciones del restaurante. Actúan como intermediarios entre los meseros y la gerencia.
+- **Funciones Principales**:
+  - Acceder a las mesas y cuentas de todos los meseros.
+  - Visualizar todas las cuentas abiertas en el momento.
+  - Acceder a cuentas cerradas (pagos registrados) durante el día.
+  - Modificar y borrar elementos de las cuentas según sea necesario.
+  - Imprimir cuentas y gestionar alimentos especiales, como cortesías.
+  - Realizar descuentos en las cuentas de los clientes.
+- **Nivel Educativo y Técnico**: Se espera que los supervisores de piso tengan un nivel educativo intermedio y conocimientos técnicos básicos para operar el sistema y realizar tareas de supervisión.
+
+#### 3. Gerente:
+- **Descripción**: Los gerentes tienen un rol de liderazgo y toma de decisiones en el restaurante. Son responsables de la gestión global del establecimiento y la optimización de su rendimiento.
+- **Funciones Principales**:
+  - Acceder a informes de ventas y análisis de desempeño de los meseros.
+  - Consultar información detallada sobre la venta, incluidos todos los pagos realizados en el día.
+  - Modificar el menú, agregar o eliminar elementos según sea necesario.
+  - Gestionar el inventario y realizar ajustes según las necesidades del negocio.
+  - Elaborar horarios de trabajo para el personal.
+- **Nivel Educativo y Técnico**: Se espera que los gerentes tengan un nivel educativo avanzado y sólidos conocimientos técnicos para utilizar el sistema de manera efectiva y tomar decisiones estratégicas para el restaurante.
+
+#### 4. Áreas de Producción (Bartenders y Cocineros):
+- **Descripción**: Las áreas de producción, que incluyen a los bartenders y cocineros, utilizan el sistema POS principalmente para gestionar y coordinar los pedidos entrantes y salientes, así como para obtener información relevante sobre la preparación de los alimentos y bebidas.
+- **Funciones Principales**:
+  - Ver los pedidos asignados a su área de trabajo.
+  - Organizar el orden de preparación de los pedidos.
+  - Marcar los pedidos como completados una vez finalizados.
+  - Consultar indicaciones especiales sobre la preparación de platos.
+  - Revisar pedidos anteriores realizados durante su turno de trabajo.
+- **Nivel Educativo y Técnico**: Aunque se espera que tengan un conocimiento práctico de las operaciones del restaurante, los bartenders y cocineros no necesitan un nivel educativo específico ni habilidades técnicas avanzadas para utilizar el sistema POS en su área de producción.
 ### 2.5 Suposiciones y Dependencias
 Enumerar los factores asumidos (en lugar de hechos conocidos) que podrían afectar a los requisitos establecidos en el SRS. Estos podrían incluir componentes de terceros o comerciales que planea utilizar, problemas relacionados con el entorno de desarrollo o operación, o restricciones. El proyecto podría verse afectado si estas suposiciones son incorrectas, no se comparten o cambian. También identificar cualquier dependencia que el proyecto tenga con factores externos, como componentes de software que pretende reutilizar de otro proyecto, a menos que ya estén documentados en otro lugar (por ejemplo, en el documento de visión y alcance o el plan del proyecto).
+
+Se asume que los restaurantes que implementan un sistema POS buscan mejorar la eficiencia operativa, aumentar la satisfacción del cliente y optimizar los procesos de negocio mediante el uso de tecnología avanzada y herramientas de gestión modernas.
 
 ### 2.6 Asignación de Requisitos
 Asignar los requisitos de software a elementos de software. Para los requisitos que requerirán implementación en múltiples elementos de software, o cuando la asignación a un elemento de software esté inicialmente indefinida, esto debe indicarse así. Se debe utilizar una tabla de referencia cruzada por función y elemento de software para resumir la asignación.
 
 Identificar los requisitos que pueden posponerse hasta versiones futuras del sistema (por ejemplo, bloques y/o incrementos).
+
 
 ## 3. Requisitos
 > Esta sección especifica los requisitos del producto de software. Especificar todos los requisitos de software a un nivel de detalle suficiente para permitir que los diseñadores diseñen un sistema de software que satisfaga esos requisitos, y para permitir que los probadores prueben que el sistema de software cumple con esos requisitos.
