@@ -10,5 +10,7 @@ package modelo;
  */
 public class Empleado {
     int id;
+    int userCode;
+    string nomble
     
 }
