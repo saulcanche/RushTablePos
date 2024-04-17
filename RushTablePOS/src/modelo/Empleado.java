@@ -220,25 +220,19 @@ public class Empleado {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
+        if (this == obj) return true;
+
+        if (obj == null) return false;
+
+        if (getClass() != obj.getClass()) return false;
+
         final Empleado other = (Empleado) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        if (this.userCode != other.userCode) {
-            return false;
-        }
-        if (!Objects.equals(this.rol, other.rol)) {
-            return false;
-        }
+        if (this.id != other.id) return false;
+
+        if (this.userCode != other.userCode) return false;
+
+        if (!Objects.equals(this.rol, other.rol)) return false;
+
         return Objects.equals(this.autoridad, other.autoridad);
     }
 
