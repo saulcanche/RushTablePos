@@ -1,19 +1,10 @@
 package modelo;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Objects;
-import java.util.logging.Logger;
 
-/**
- *
- * @author Saul
- */
 public class Empleado {
     private int id;
     private int userCode;
@@ -199,49 +190,14 @@ public class Empleado {
         return id;
     }
 
-    public static Logger getLOG() {
-        return LOG;
-    }
-
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + this.id;
-        hash = 53 * hash + this.userCode;
-        hash = 53 * hash + Objects.hashCode(this.nombre);
-        hash = 53 * hash + Objects.hashCode(this.autoridad);
-        hash = 53 * hash + Objects.hashCode(this.rol);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-
-
-        if (obj == null) return false;
-
-        if (getClass() != obj.getClass()) return false;
-
-        final Empleado other = (Empleado) obj;
-        if (this.id != other.id) return false;
-
-        if (this.userCode != other.userCode) return false;
-
-        if (!Objects.equals(this.rol, other.rol)) return false;
-
-        return Objects.equals(this.autoridad, other.autoridad);
     }
 
     @Override
     public String toString() {
         return "Empleado{" + "id=" + id + ", userCode=" + userCode + ", nombre=" + nombre + ", apellido=" + apellido + ", NSS=" + NSS + ", autoridad=" + autoridad + ", antiguedad=" + antiguedad + ", diasVacaciones=" + diasVacaciones + ", pagoQuincenal=" + pagoQuincenal + ", rol=" + rol + ", horarioEntrada=" + horarioEntrada + ", horaInicioJornada=" + horaInicioJornada + ", horaFinJornada=" + horaFinJornada + ", tiempoTrabajoDia=" + tiempoTrabajoDia + ", tiempoTrabajoQuincena=" + tiempoTrabajoQuincena + '}';
     }
-    
-    private static final Logger LOG = Logger.getLogger(Empleado.class.getName());
+
     
 }
