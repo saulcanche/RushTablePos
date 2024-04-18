@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *
  * @author Octavio
  */
-public class ItemPizza extends ItemMenu{
+public class Pizza extends ItemMenu{
     private String tamano;
     private Boolean esDelgada;
     private boolean esCrujiente;
