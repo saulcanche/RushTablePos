@@ -190,6 +190,7 @@ public class Empleado {
         return id;
     }
 
+
     public void setId(int id) {
         this.id = id;
     }
@@ -198,6 +199,4 @@ public class Empleado {
     public String toString() {
         return "Empleado{" + "id=" + id + ", userCode=" + userCode + ", nombre=" + nombre + ", apellido=" + apellido + ", NSS=" + NSS + ", autoridad=" + autoridad + ", antiguedad=" + antiguedad + ", diasVacaciones=" + diasVacaciones + ", pagoQuincenal=" + pagoQuincenal + ", rol=" + rol + ", horarioEntrada=" + horarioEntrada + ", horaInicioJornada=" + horaInicioJornada + ", horaFinJornada=" + horaFinJornada + ", tiempoTrabajoDia=" + tiempoTrabajoDia + ", tiempoTrabajoQuincena=" + tiempoTrabajoQuincena + '}';
     }
-
-    
 }

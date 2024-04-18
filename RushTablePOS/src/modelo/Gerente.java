@@ -1,50 +1,25 @@
+
 package modelo;
 
-import java.time.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  *
- * Implementa la clase de Gerente usando la clase Restaurante y Autoridad
- * Clase gerente hereda de la clase de empleado
- *
- * @author angel
+ * @author Saul
  */
-
-public class Gerente extends Empleado{
-
-    Restaurante r;
+public class Gerente extends Empleado {
     double metaDeVenta;
-    double bonoPorVenta;
+    double bonoPorMeta;
+    Restaurante restaurante;
 
-    // Constructor de Gerente :
-    public Gerente(int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones, double pagoQuincenal, String rol, LocalDate horarioEntrada, LocalTime horaInicioJornada, LocalTime horaFinJornada, Duration tiempoTrabajoDia, Duration tiempoTrabajoQuincena, Restaurante r, double metaDeVenta, double bonoPorVenta) {
+    public Gerente(double metaDeVenta, double bonoPorMeta, Restaurante restaurante, int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones, double pagoQuincenal, String rol, LocalDate horarioEntrada, LocalTime horaInicioJornada, LocalTime horaFinJornada, Duration tiempoTrabajoDia, Duration tiempoTrabajoQuincena) {
         super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones, pagoQuincenal, rol, horarioEntrada, horaInicioJornada, horaFinJornada, tiempoTrabajoDia, tiempoTrabajoQuincena);
-        setR(r);
-        setBonoPorVenta(bonoPorVenta);
-        setMetaDeVenta(metaDeVenta);
+        this.metaDeVenta = metaDeVenta;
+        this.bonoPorMeta = bonoPorMeta;
+        this.restaurante = restaurante;
     }
-
-    // Falta crear una clase Restaurante !!!!
-    private void setR(Restaurante r) { this.r = r; }
-
-    // Falta poner errores y excepciones :
-    private void setMetaDeVenta(double mt) { this.metaDeVenta = mt; }
-    private void setBonoPorVenta(double bv) { this.bonoPorVenta = bv; }
-
-    public void AccederInformeVentas() {
-        // Implementar el acceso al informe de ventas
-    }
-
-    public void ModificarMenu() {
-        // Implementar la modificación del menu
-    }
-
-    public void GestionarInventario() {
-        // Implementar la gestion del inventario
-    }
-
-    public void ElaborarHorario() {
-        // Implementar la elaboracion del horario
-    }
-
+    
+    
 }
