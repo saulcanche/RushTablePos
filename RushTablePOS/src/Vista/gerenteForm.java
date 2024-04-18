@@ -4,8 +4,10 @@
  */
 package Vista;
 
+import Controlador.main;
 import java.util.ArrayList;
 import modelo.ItemMenu;
+import modelo.ItemPizza;
 
 /**
  *
@@ -38,7 +40,7 @@ public class gerenteForm extends javax.swing.JFrame {
         cbHamburguesa = new javax.swing.JCheckBox();
         btnAplicar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Gerentes");
@@ -129,8 +131,10 @@ public class gerenteForm extends javax.swing.JFrame {
         ArrayList<ItemMenu> itemsActivos = new ArrayList<ItemMenu>();
         
         if(cbPizza.isSelected()){
-            //itemsActivos.add(e)
+            itemsActivos.add(new ItemMenu("Pizza","Principal","Pizza de distintos tamaños y masas", 200));
         }
+        
+        main.listaItems.addAll(itemsActivos);
     }//GEN-LAST:event_btnAplicarActionPerformed
 
     /**
