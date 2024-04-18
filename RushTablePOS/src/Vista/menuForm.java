@@ -4,17 +4,19 @@
  */
 package Vista;
 
+import Controlador.tablaMenu;
+
 /**
  *
  * @author Octavio
  */
 public class menuForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form menuForm
-     */
+    private tablaMenu modeloMenu = new tablaMenu();
+    
     public menuForm() {
         initComponents();
+        modeloMenu.inicializarMenu(tbMenu);
     }
 
     /**
@@ -28,14 +30,14 @@ public class menuForm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbMenu = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Menú");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -46,7 +48,7 @@ public class menuForm extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tbMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,6 +112,6 @@ public class menuForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbMenu;
     // End of variables declaration//GEN-END:variables
 }
