@@ -4,10 +4,34 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author Octavio
+ * @author all
  */
-public class Mesero {
-    
+public class Mesero extends Empleado{
+    private double pagoPorHora;
+    private double ventaTotal;
+    private ArrayList<Cuenta> CuentasAbiertas;
+    private Comanda comanda;
+    private ArrayList<itemMenu> itemsVendidos;
+
+    public void registrarPagoCuenta(Cuenta cuenta){
+        cuenta.setIsPayed(true);
+        ventaTotal += cuenta.getTotal();
+
+    }
+    public void tomarPedido(Comanda comanda, Cuenta cuenta){
+        cuenta.item
+
+    }
+    public void imprimirCuenta(Cuenta cuenta){
+
+    }
+    public void verCuentasAbiertas(){
+
+    }
+
 }
+

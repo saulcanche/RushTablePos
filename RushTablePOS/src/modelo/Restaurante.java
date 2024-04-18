@@ -4,10 +4,15 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Octavio
  */
 public class Restaurante {
-    
+   public ArrayList<Empleado> empleados; 
+   public ArrayList<Cuenta> CuentasAbiertas;
+   public ArrayList<Cuenta> CuentasHoy;
+   public ArrayList<Descuento> Descuentos;
 }

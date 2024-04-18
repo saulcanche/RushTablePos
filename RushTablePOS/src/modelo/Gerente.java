@@ -13,6 +13,7 @@ public class Gerente extends Empleado {
     double metaDeVenta;
     double bonoPorMeta;
     Restaurante restaurante;
+    super.rol= "Gerente";
 
     public Gerente(double metaDeVenta, double bonoPorMeta, Restaurante restaurante, int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones, double pagoQuincenal, String rol, LocalDate horarioEntrada, LocalTime horaInicioJornada, LocalTime horaFinJornada, Duration tiempoTrabajoDia, Duration tiempoTrabajoQuincena) {
         super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones, pagoQuincenal, rol, horarioEntrada, horaInicioJornada, horaFinJornada, tiempoTrabajoDia, tiempoTrabajoQuincena);
@@ -20,6 +21,5 @@ public class Gerente extends Empleado {
         this.bonoPorMeta = bonoPorMeta;
         this.restaurante = restaurante;
     }
-    
-    
+ 
 }

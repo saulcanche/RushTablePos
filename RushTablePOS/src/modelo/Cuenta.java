@@ -15,6 +15,26 @@ public class Cuenta {
     private boolean isPayed;
     private Payment payment;
     private ArrayList<ItemMenu> itemsConsumidos;
+    //funciones especiales
+
+    public void incrementarSubtotal(double cantidadAumento){
+        setSubtotal(getSubtotal()+cantidadAumento);
+
+    }
+    public void incrementarTotal(double cantidaAumento){
+        setTotal(getTotal()+cantidaAumento);
+    }
+    public void incrementarIVA(double cantidadAumento){
+        setIVA(getIVA()+cantidadAumento);
+    }
+
+    }
+    public void agregarItemCuenta(itemMenu item){
+        itemsConsumidos.add(item);
+        incrementarSubtotal(item.getPrecio());
+        incrementarIVA(item.getPrecio * 0.16);
+        incrementarTotal(item.getPrecio + item.getPrecio * 0.16);
+    }
 
     // Constructor
     public Cuenta(String id, LocalDate date, LocalTime time) {
@@ -71,7 +91,7 @@ public class Cuenta {
     
     //getters
 
-    public Mesero getWaiter() {
+    public Mesero getMesero() {
         return mesero;
     }
 
