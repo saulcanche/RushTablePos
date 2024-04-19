@@ -5,7 +5,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Empleado {
+public class Empleado implements Nomina{
     private int id;
     private int userCode;
     private String nombre;
@@ -22,7 +22,7 @@ public class Empleado {
     private Duration tiempoTrabajoDia;
     private Duration tiempoTrabajoQuincena;
 
-    public Empleado(int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones, double pagoQuincenal, String rol, LocalDate horarioEntrada, LocalTime horaInicioJornada, LocalTime horaFinJornada, Duration tiempoTrabajoDia, Duration tiempoTrabajoQuincena) {
+    public Empleado(int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
         this.id = id;
         this.userCode = userCode;
         this.nombre = nombre;
@@ -31,14 +31,10 @@ public class Empleado {
         this.autoridad = autoridad;
         this.antiguedad = antiguedad;
         this.diasVacaciones = diasVacaciones;
-        this.pagoQuincenal = pagoQuincenal;
         this.rol = rol;
-        this.horarioEntrada = horarioEntrada;
-        this.horaInicioJornada = horaInicioJornada;
-        this.horaFinJornada = horaFinJornada;
-        this.tiempoTrabajoDia = tiempoTrabajoDia;
-        this.tiempoTrabajoQuincena = tiempoTrabajoQuincena;
     }
+
+
 
     
     
@@ -198,5 +194,11 @@ public class Empleado {
     @Override
     public String toString() {
         return "Empleado{" + "id=" + id + ", userCode=" + userCode + ", nombre=" + nombre + ", apellido=" + apellido + ", NSS=" + NSS + ", autoridad=" + autoridad + ", antiguedad=" + antiguedad + ", diasVacaciones=" + diasVacaciones + ", pagoQuincenal=" + pagoQuincenal + ", rol=" + rol + ", horarioEntrada=" + horarioEntrada + ", horaInicioJornada=" + horaInicioJornada + ", horaFinJornada=" + horaFinJornada + ", tiempoTrabajoDia=" + tiempoTrabajoDia + ", tiempoTrabajoQuincena=" + tiempoTrabajoQuincena + '}';
+    }
+
+
+    @Override
+    public void calcularPagoQuincena() {
+        setPagoQuincenal(pagoQuincenal);
     }
 }

@@ -3,7 +3,7 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class foodItem extends ItemMenu {
+public class FoodItem extends ItemMenu {
     private String alergia;
     private boolean isSomeoneAlergic;
 
