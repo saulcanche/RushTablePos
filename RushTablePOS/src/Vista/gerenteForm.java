@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
 
+import Controlador.main;
 import java.util.ArrayList;
 import modelo.ItemMenu;
 
@@ -38,7 +36,7 @@ public class gerenteForm extends javax.swing.JFrame {
         cbHamburguesa = new javax.swing.JCheckBox();
         btnAplicar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Gerentes");
@@ -127,10 +125,22 @@ public class gerenteForm extends javax.swing.JFrame {
     private void btnAplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAplicarActionPerformed
         //POR EL MOMENTO PUROS IF 
         ArrayList<ItemMenu> itemsActivos = new ArrayList<ItemMenu>();
+        main.listaItems.clear();
         
         if(cbPizza.isSelected()){
-            //itemsActivos.add(e)
+            itemsActivos.add(new ItemMenu("Pizza","Principal","Pizza de distintos tamaños y masas", 200));
         }
+        if(cbPasta.isSelected()){
+            itemsActivos.add(new ItemMenu("Pasta","Principal","Pasta italiana", 150));
+        }
+        if(cbCarne.isSelected()){
+            itemsActivos.add(new ItemMenu("Carne","Principal","Corte de res", 300));
+        }
+        if(cbHamburguesa.isSelected()){
+            itemsActivos.add(new ItemMenu("Hamburguesa","Principal","Hamburguesa de res ", 200));
+        }
+        
+        main.listaItems.addAll(itemsActivos);
     }//GEN-LAST:event_btnAplicarActionPerformed
 
     /**
