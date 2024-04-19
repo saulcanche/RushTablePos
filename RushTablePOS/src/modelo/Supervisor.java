@@ -1,6 +1,5 @@
 public class Supervisor extends Empleado{
    private Restaurante Restaurante; 
-   super.rol = "supervisor";
 
 
     public void verTodasLasCuentasAbiertas(){};

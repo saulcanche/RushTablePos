@@ -33,5 +33,45 @@ public class Mesero extends Empleado{
 
     }
 
+
+    public double getPagoPorHora() {
+        return this.pagoPorHora;
+    }
+
+    public void setPagoPorHora(double pagoPorHora) {
+        this.pagoPorHora = pagoPorHora;
+    }
+
+    public double getVentaTotal() {
+        return this.ventaTotal;
+    }
+
+    public void setVentaTotal(double ventaTotal) {
+        this.ventaTotal = ventaTotal;
+    }
+
+    public ArrayList<Cuenta> getCuentasAbiertas() {
+        return this.CuentasAbiertas;
+    }
+
+    public void setCuentasAbiertas(ArrayList<Cuenta> CuentasAbiertas) {
+        this.CuentasAbiertas = CuentasAbiertas;
+    }
+
+    public Comanda getComanda() {
+        return this.comanda;
+    }
+
+    public void setComanda(Comanda comanda) {
+        this.comanda = comanda;
+    }
+
+    public ArrayList<itemMenu> getItemsVendidos() {
+        return this.itemsVendidos;
+    }
+
+    public void setItemsVendidos(ArrayList<itemMenu> itemsVendidos) {
+        this.itemsVendidos = itemsVendidos;
+    }
 }
 
