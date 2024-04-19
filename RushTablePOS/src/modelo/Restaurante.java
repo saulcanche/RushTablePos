@@ -12,7 +12,9 @@ import java.util.ArrayList;
  */
 public class Restaurante {
    public ArrayList<Empleado> empleados; 
-   public ArrayList<Cuenta> CuentasAbiertas;
-   public ArrayList<Cuenta> CuentasHoy;
-   public ArrayList<Descuento> Descuentos;
+   public ArrayList<Cuenta> cuentasAbiertas;
+   public ArrayList<Cuenta> cuentasHoy;
+   public ArrayList<Descuento> descuentos;
+   public Arrylist<Comanda> PedidosBarra;
+   public ArrayList<Comanda> PedidosCocina;
 }
