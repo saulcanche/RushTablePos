@@ -13,7 +13,7 @@ public class Cuenta {
     private LocalTime time;
     private String area;
     private boolean isPayed;
-    private Payment payment;
+    private ArrayList<Payment> payments;
     private ArrayList<ItemMenu> itemsConsumidos;
     //funciones especiales
 
