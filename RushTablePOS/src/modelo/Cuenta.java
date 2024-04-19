@@ -13,7 +13,7 @@ public class Cuenta {
     private LocalTime time;
     private String area;
     private boolean isPayed;
-    private ArrayList<Payment> payments;
+    private ArrayList<Payment> payment;
     private ArrayList<ItemMenu> itemsConsumidos;
     //funciones especiales
 
@@ -27,13 +27,12 @@ public class Cuenta {
     public void incrementarIVA(double cantidadAumento){
         setIVA(getIVA()+cantidadAumento);
     }
-
-    }
-    public void agregarItemCuenta(itemMenu item){
+    
+    public void agregarItemCuenta(ItemMenu item){
         itemsConsumidos.add(item);
         incrementarSubtotal(item.getPrecio());
-        incrementarIVA(item.getPrecio * 0.16);
-        incrementarTotal(item.getPrecio + item.getPrecio * 0.16);
+        incrementarIVA(item.getPrecio() * 0.16);
+        incrementarTotal(item.getPrecio() + item.getPrecio() * 0.16);
     }
 
     // Constructor
@@ -82,7 +81,7 @@ public class Cuenta {
     }
 
     public void setPayment(Payment payment) {
-        this.payment = payment;
+        this.payment.addAll(this.payment);
     }
 
     public void setItemsConsumidos(ArrayList<ItemMenu> itemsConsumidos) {
@@ -127,7 +126,7 @@ public class Cuenta {
         return isPayed;
     }
 
-    public Payment getPayment() {
+    public ArrayList<Payment> getPayment() {
         return payment;
     }
 

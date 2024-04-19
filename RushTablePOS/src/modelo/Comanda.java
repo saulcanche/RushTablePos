@@ -1,4 +1,5 @@
-import java.time.Duration;
+package modelo;
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 import modelo.FoodItem;
@@ -48,11 +49,11 @@ public class Comanda {
         }
 
         if (!comandaCocina.itemsComanda.isEmpty()) {
-            restaurante.pedidosCocina.add(comandaCocina);
+            restaurante.PedidosCocina.add(comandaCocina);
         }
 
         if (!comandaBarra.itemsComanda.isEmpty()) {
-            restaurante.pedidosBarra.add(comandaBarra);
+            restaurante.PedidosBarra.add(comandaBarra);
         }
 
         // Actualizar el estado de la comanda después de enviarla
