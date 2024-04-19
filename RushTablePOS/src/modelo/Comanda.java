@@ -1,6 +1,9 @@
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import modelo.FoodItem;
+import modelo.ItemMenu;
+import modelo.Restaurante;
 
 public class Comanda {
     private String estado;
