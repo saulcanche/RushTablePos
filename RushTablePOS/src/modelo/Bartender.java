@@ -1,9 +1,15 @@
-
+package modelo;
 import java.util.ArrayList;
 
 
 
 public class Bartender extends StaffPreparacion {
+
+    public Bartender(double pagoPorHora, int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
+        super(pagoPorHora, id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones);
+    }
+    
+    
 
     @Override
     ArrayList<Comanda> VerComanda() {

@@ -1,7 +1,12 @@
+package modelo;
+
 public class Supervisor extends Empleado{
    private Restaurante Restaurante; 
 
-
+    public Supervisor(int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
+        super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones);
+    }
+   
     public void verTodasLasCuentasAbiertas(){};
 
     public void verTodasLasCuentasCerradas(){};

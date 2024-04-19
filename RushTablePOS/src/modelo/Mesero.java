@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 
 import java.util.ArrayList;
@@ -15,7 +12,18 @@ public class Mesero extends Empleado{
     private double ventaTotal;
     private ArrayList<Cuenta> CuentasAbiertas;
     private Comanda comanda;
-    private ArrayList<itemMenu> itemsVendidos;
+    private ArrayList<ItemMenu> itemsVendidos;
+
+    public Mesero(double pagoPorHora, double ventaTotal, ArrayList<Cuenta> CuentasAbiertas, Comanda comanda, ArrayList<ItemMenu> itemsVendidos, int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
+        super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones);
+        this.pagoPorHora = pagoPorHora;
+        this.ventaTotal = ventaTotal;
+        this.CuentasAbiertas = CuentasAbiertas;
+        this.comanda = comanda;
+        this.itemsVendidos = itemsVendidos;
+    }
+    
+    
 
     public void registrarPagoCuenta(Cuenta cuenta){
         cuenta.setIsPayed(true);
@@ -23,7 +31,7 @@ public class Mesero extends Empleado{
 
     }
     public void tomarPedido(Comanda comanda, Cuenta cuenta){
-        cuenta.item
+        cuenta.setItemsConsumidos(comanda.itemsComanda);
 
     }
     public void imprimirCuenta(Cuenta cuenta){
@@ -66,11 +74,11 @@ public class Mesero extends Empleado{
         this.comanda = comanda;
     }
 
-    public ArrayList<itemMenu> getItemsVendidos() {
+    public ArrayList<ItemMenu> getItemsVendidos() {
         return this.itemsVendidos;
     }
 
-    public void setItemsVendidos(ArrayList<itemMenu> itemsVendidos) {
+    public void setItemsVendidos(ArrayList<ItemMenu> itemsVendidos) {
         this.itemsVendidos = itemsVendidos;
     }
 }

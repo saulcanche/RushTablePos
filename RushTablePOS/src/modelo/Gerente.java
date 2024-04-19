@@ -13,10 +13,10 @@ public class Gerente extends Empleado {
     double metaDeVenta;
     double bonoPorMeta;
     Restaurante restaurante;
-    super.rol= "Gerente";
 
     public Gerente(double metaDeVenta, double bonoPorMeta, Restaurante restaurante, int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
         super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones);
+        super.setRol("Gerente");
         this.metaDeVenta = metaDeVenta;
         this.bonoPorMeta = bonoPorMeta;
         this.restaurante = restaurante;
