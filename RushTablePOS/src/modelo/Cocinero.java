@@ -1,3 +1,3 @@
-public class Cocinero extends cocinero{
+public class Cocinero extends StaffPreparacion{
     
 }

@@ -1,10 +1,7 @@
-public class StaffPreparacion extends Empleado{
+abstract class StaffPreparacion extends Empleado{
     private double pagoPorHora;
 
-    public VerComanda(){
+    abstract VerComanda();
 
-    }
-    public marcarComandaHecha(){
-        
-    }
+    abstract marcarComandaHecha();
 }
