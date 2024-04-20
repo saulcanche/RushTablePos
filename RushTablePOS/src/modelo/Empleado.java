@@ -1,6 +1,5 @@
 package modelo;
 
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -22,7 +21,7 @@ public class Empleado implements Nomina{
     private Duration tiempoTrabajoDia;
     private Duration tiempoTrabajoQuincena;
 
-    public Empleado(int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
+    public Empleado(int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones, String rol) {
         this.id = id;
         this.userCode = userCode;
         this.nombre = nombre;
@@ -34,11 +33,6 @@ public class Empleado implements Nomina{
         this.rol = rol;
     }
 
-
-
-    
-    
-    
     public void iniciarJornada() {
         // Verificar si ya se inició la jornada hoy
         if (horaInicioJornada != null && horaFinJornada != null) {
@@ -195,7 +189,6 @@ public class Empleado implements Nomina{
     public String toString() {
         return "Empleado{" + "id=" + id + ", userCode=" + userCode + ", nombre=" + nombre + ", apellido=" + apellido + ", NSS=" + NSS + ", autoridad=" + autoridad + ", antiguedad=" + antiguedad + ", diasVacaciones=" + diasVacaciones + ", pagoQuincenal=" + pagoQuincenal + ", rol=" + rol + ", horarioEntrada=" + horarioEntrada + ", horaInicioJornada=" + horaInicioJornada + ", horaFinJornada=" + horaFinJornada + ", tiempoTrabajoDia=" + tiempoTrabajoDia + ", tiempoTrabajoQuincena=" + tiempoTrabajoQuincena + '}';
     }
-
 
     @Override
     public void calcularPagoQuincena() {

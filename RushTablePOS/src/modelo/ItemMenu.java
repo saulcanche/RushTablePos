@@ -25,8 +25,6 @@ public class ItemMenu {
         this.descripcion = descripcion;
         this.precio = precio;
     }
-    
-    
 
     public ItemMenu(String id, String nombre, String categoria, String descripcion, Duration timeForPreparation, LocalTime sendTime, LocalTime timeProgramed, String status, double precio, boolean isOutStock, ArrayList<String> mensajes) {
         this.id = id;

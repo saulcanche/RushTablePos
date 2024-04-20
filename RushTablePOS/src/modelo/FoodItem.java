@@ -7,9 +7,8 @@ import java.util.ArrayList;
 
 
 /**
- *
  * @author Octavio
- */
+ **/
 public class FoodItem extends ItemMenu {
     
     public FoodItem(String id, String nombre, String categoria, String descripcion, Duration timeForPreparation, LocalTime sendTime, LocalTime timeProgramed, String status, double precio, boolean isOutStock, ArrayList<String> mensajes) {
