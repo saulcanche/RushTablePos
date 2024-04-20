@@ -22,10 +22,10 @@ public class Restaurante {
       this.cuentasAbiertas = new ArrayList<>();
       this.cuentasHoy = new ArrayList<>();
       this.descuentos = new ArrayList<>();
-      // Quiza sea una buena idea implementar pedidos usando colas en lugar de array list
       this.Barra = Queue();
       this.Cocina = Queue();
    }
+
 
    private Queue<Comanda> Queue() {
       return new Queue<Comanda>() {
@@ -119,7 +119,7 @@ public class Restaurante {
 
          }
       };
-   }
+   } // Falta implementar los métodos específicos de la cola para la clase Comanda
 
    public void AgregarEmpleado(String nombre, String apellido, String NSS, String rol) {
       try {
@@ -148,5 +148,20 @@ public class Restaurante {
       }
       catch (Exception e) { System.out.println("Error al agregar empleado: " + e.getMessage()); }
    }
+
+}
+
+
+
+class Test {
+   Restaurante restaurante = new Restaurante();
+
+   /*
+   Programar un conjunto de test que prueben todos los métodos
+   de la clase restaurante para comprobar su correcto
+   funcionamiento.
+    */
+
+
 
 }

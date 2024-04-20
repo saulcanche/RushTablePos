@@ -6,9 +6,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 /**
- *
  * @author Saul
- */
+ **/
 public class Gerente extends Empleado {
     double metaDeVenta;
     double bonoPorMeta;
