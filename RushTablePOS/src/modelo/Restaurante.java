@@ -22,8 +22,12 @@ public class Restaurante {
       this.cuentasAbiertas = new ArrayList<>();
       this.cuentasHoy = new ArrayList<>();
       this.descuentos = new ArrayList<>();
-      this.Barra = Queue();
-      this.Cocina = Queue();
+      //this.Barra = Queue();
+      //this.Cocina = Queue();
+
+      this.Barra = new LinkedList<>();
+      this.Cocina = new LinkedList<>();
+
    }
 
 
@@ -149,19 +153,68 @@ public class Restaurante {
       catch (Exception e) { System.out.println("Error al agregar empleado: " + e.getMessage()); }
    }
 
+   public void EliminarEmpleado(int id) {
+      try { if (!empleados.removeIf(a -> a.getId() == id)) System.out.println("No existe el empleado.\n"); }
+      catch (Exception e) { System.out.println("Error al eliminar empleado: " + e.getMessage()); }
+   }
+
+   public Empleado getEmpleado(int id) {
+      try{
+         return empleados
+                 .stream()
+                 .filter(empleado -> empleado.getId() == id)
+                 .findFirst()
+                 .orElse(null);
+      }
+      catch (Exception e) { System.out.println("Error al buscar empleado : " + e.getMessage()); }
+      return null;
+   }
+
+   public void GenerarInformeDeVentas() {
+      /*
+         Cómo vamos a manejar el informe de ventas ????
+       */
+   }
+
+   public void ActualizarInventario() {
+      /*
+         Hace falta un conjunto de datos que guarde el inventario
+         del restaurante.
+       */
+   }
+
+   public void ModificarMenu() {
+      /*
+         Llama a una función que modifica la vista de menu y
+         el inventario disponible para preparar las comidas
+         y bebidas ????
+       */
+   }
+
 }
 
-
-
 class Test {
-   Restaurante restaurante = new Restaurante();
-
    /*
-   Programar un conjunto de test que prueben todos los métodos
-   de la clase restaurante para comprobar su correcto
-   funcionamiento.
+      Programar un conjunto de test que prueben todos los métodos
+      de la clase restaurante para comprobar su correcto
+      funcionamiento.
     */
+   public static void main(String[] args) {
+      // Pruebe de Linked List como Queue
+      Restaurante restaurante = new Restaurante();
+      Queue<Comanda> C =  restaurante.Cocina;
 
+      C.add(new Comanda("Comida 1"));
+      C.add(new Comanda("Comida 2"));
 
+      System.out.println(C.peek());
+      C.remove();
+      System.out.println(C.peek());
 
+      /*
+      Parece que hay múltiples implementaciones de linked list
+      y con eso se suple Queue y Stack. Funciona bien.
+       */
+
+   }
 }

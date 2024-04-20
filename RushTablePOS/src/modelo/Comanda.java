@@ -112,4 +112,8 @@ public class Comanda {
     public void setTiempoEnvio(LocalTime tiempoEnvio) {
         this.tiempoEnvio = tiempoEnvio;
     }
+
+    public String toString() {
+        return "Comanda : " + getId() +  " " + getEstado() + " " + getTiempoEnvio();
+    }
 }
