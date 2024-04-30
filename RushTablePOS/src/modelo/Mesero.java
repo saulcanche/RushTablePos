@@ -15,7 +15,7 @@ public class Mesero extends Empleado{
     private ArrayList<ItemMenu> itemsVendidos;
 
     public Mesero(double pagoPorHora, double ventaTotal, ArrayList<Cuenta> CuentasAbiertas, Comanda comanda, ArrayList<ItemMenu> itemsVendidos, int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
-        super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones);
+        super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones, "Mesero");
         this.pagoPorHora = pagoPorHora;
         this.ventaTotal = ventaTotal;
         this.CuentasAbiertas = CuentasAbiertas;

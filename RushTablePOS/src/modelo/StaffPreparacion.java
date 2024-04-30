@@ -6,7 +6,7 @@ abstract class StaffPreparacion extends Empleado{
     private double pagoPorHora;
 
     public StaffPreparacion(double pagoPorHora, int id, int userCode, String nombre, String apellido, String NSS, Autoridad autoridad, double antiguedad, int diasVacaciones) {
-        super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones);
+        super(id, userCode, nombre, apellido, NSS, autoridad, antiguedad, diasVacaciones, "Staff Preparacion");
         this.pagoPorHora = pagoPorHora;
     }
     
