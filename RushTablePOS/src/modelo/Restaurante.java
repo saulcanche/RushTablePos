@@ -15,6 +15,9 @@ public class Restaurante {
    public ArrayList<Descuento> descuentos;
    public Queue<Comanda> Barra;
    public Queue<Comanda> Cocina;
+   private static int idCounter = 1;
+   private static int userCodeCounter = 1000;
+
 
    public Restaurante() {
 
@@ -101,8 +104,8 @@ public class Restaurante {
    public void AgregarEmpleado(String nombre, String apellido, String NSS, String rol) {
       try {
          // generar new id y new userCode
-         int new_id = 0;
-         int new_userCode = 0;
+         int new_id = idCounter++;
+         int new_userCode = idCounter++;;
          Autoridad aut = Autoridad.LOW;
 
          if (Objects.equals(rol, "Supervisor")) aut = Autoridad.HIGH;
@@ -173,6 +176,7 @@ class Test {
       funcionamiento.
     */
    public static void main(String[] args) {
+      Empleado empleado = new Empleado(100, 0, null, null, null, null, 0, 0, null);
       // Prueba de Linked List como Queue
       Restaurante restaurante = new Restaurante();
       Queue<Comanda> C =  restaurante.Cocina;
@@ -183,6 +187,8 @@ class Test {
       System.out.println(C.peek());
       C.remove();
       System.out.println(C.peek());
+
+      restaurante.AgregarEmpleado(null, null, null, null);
 
       /*
       Parece que hay múltiples implementaciones de linked list
