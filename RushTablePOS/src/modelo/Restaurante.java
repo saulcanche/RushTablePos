@@ -9,12 +9,13 @@ import java.util.*;
 
 public class Restaurante {
 
-   private ArrayList<Empleado> empleados;
-   private ArrayList<Cuenta> cuentasAbiertas;
-   private ArrayList<Cuenta> cuentasHoy;
-   private ArrayList<Descuento> descuentos;
-   private Queue<Comanda> Barra;
-   private Queue<Comanda> Cocina;
+   public ArrayList<Empleado> empleados;
+   public ArrayList<Cuenta> cuentasAbiertas;
+   public ArrayList<Cuenta> cuentasHoy;
+   public ArrayList<Descuento> descuentos;
+   public Queue<Comanda> Barra;
+   public Queue<Comanda> Cocina;
+   private static int userCodeCounter = 1000;
 
    public Restaurante() {
 
@@ -112,7 +113,7 @@ public class Restaurante {
 
          Random random_generator = new Random();
          int new_id = random_generator.nextInt(190000, 2999999);
-         int new_userCode = random_generator.nextInt(10000, 299999);
+         int new_userCode = userCodeCounter++;
          Autoridad aut = Autoridad.LOW;
 
          if (Objects.equals(rol, "Supervisor")) aut = Autoridad.HIGH;
@@ -202,6 +203,7 @@ class Test {
       funcionamiento.
     */
    public static void main(String[] args) {
+      Empleado empleado = new Empleado(100, 0, null, null, null, null, 0, 0, null);
       // Prueba de Linked List como Queue
       Restaurante restaurante = new Restaurante();
       Queue<Comanda> C =  restaurante.getCocina();
@@ -221,6 +223,8 @@ class Test {
       );
 
       System.out.println(restaurante.getEmpleado("Angel", "Castillo")); // Busqueda por Nombre y Apellido
+
+      restaurante.AgregarEmpleado(null, null, null, null);
 
       /*
       Parece que hay múltiples implementaciones de linked list
