@@ -49,11 +49,11 @@ public class Comanda {
         }
 
         if (!comandaCocina.itemsComanda.isEmpty()) {
-            restaurante.Cocina.add(comandaCocina);
+            restaurante.getCocina().add(comandaCocina);
         }
 
         if (!comandaBarra.itemsComanda.isEmpty()) {
-            restaurante.Barra.add(comandaBarra);
+            restaurante.getBarra().add(comandaBarra);
         }
 
         // Actualizar el estado de la comanda después de enviarla

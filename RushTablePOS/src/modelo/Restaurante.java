@@ -9,12 +9,12 @@ import java.util.*;
 
 public class Restaurante {
 
-   public ArrayList<Empleado> empleados;
-   public ArrayList<Cuenta> cuentasAbiertas;
-   public ArrayList<Cuenta> cuentasHoy;
-   public ArrayList<Descuento> descuentos;
-   public Queue<Comanda> Barra;
-   public Queue<Comanda> Cocina;
+   private ArrayList<Empleado> empleados;
+   private ArrayList<Cuenta> cuentasAbiertas;
+   private ArrayList<Cuenta> cuentasHoy;
+   private ArrayList<Descuento> descuentos;
+   private Queue<Comanda> Barra;
+   private Queue<Comanda> Cocina;
 
    public Restaurante() {
 
@@ -32,7 +32,7 @@ public class Restaurante {
             ArrayList<Descuento> descuentos, Queue<Comanda> Barra, Queue<Comanda> Cocina)
    {
       /*
-      Este constructor servirá para cuando ya existen datos previos de un restaurante
+      Este constructor servirá para cuando ya existan datos previos de un restaurante
       Se crearon setters y getters para comprobar que los elementos usados sean validos
       para el uso general del programa.
        */
@@ -43,6 +43,14 @@ public class Restaurante {
       setBarra(Barra);
       setCocina(Cocina);
    }
+
+   public ArrayList<Cuenta> getCuentasAbiertas() { return cuentasAbiertas; }
+   public Queue<Comanda> getCocina() { return Cocina; }
+   public Queue<Comanda> getBarra() { return Barra; }
+   public ArrayList<Cuenta> getCuentasHoy() { return cuentasHoy; }
+   public ArrayList<Descuento> getDescuentos() { return descuentos; }
+   public ArrayList<Empleado> getEmpleados() { return empleados; }
+
 
    public void setEmpleados(ArrayList<Empleado> E) {
       if (!Objects.deepEquals(E, null)) {
@@ -101,8 +109,10 @@ public class Restaurante {
    public void AgregarEmpleado(String nombre, String apellido, String NSS, String rol) {
       try {
          // generar new id y new userCode
-         int new_id = 0;
-         int new_userCode = 0;
+
+         Random random_generator = new Random();
+         int new_id = random_generator.nextInt(190000, 2999999);
+         int new_userCode = random_generator.nextInt(10000, 299999);
          Autoridad aut = Autoridad.LOW;
 
          if (Objects.equals(rol, "Supervisor")) aut = Autoridad.HIGH;
@@ -121,6 +131,8 @@ public class Restaurante {
                          rol
                  )
          );
+
+         System.out.println("Your new employee has the id : " + new_id + " and its user code is : " + new_userCode);
 
       }
       catch (Exception e) { System.out.println("Error al agregar empleado: " + e.getMessage()); }
@@ -141,6 +153,23 @@ public class Restaurante {
       }
       catch (Exception e) { System.out.println("Error al buscar empleado : " + e.getMessage()); }
       return null;
+   }
+
+   public Empleado getEmpleado(String nombre, String apellido) {
+      try {
+         return empleados
+                 .stream()
+                 .filter(
+                         empleado ->
+                         Objects.equals(empleado.getNombre(), nombre) && Objects.equals(empleado.getApellido(), apellido)
+                 )
+                 .findFirst()
+                 .orElse(null);
+      }
+      catch (Exception e) {
+         System.out.println("Error while searching employee by name.");
+         return null;
+      }
    }
 
    public void GenerarInformeDeVentas() {
@@ -175,7 +204,7 @@ class Test {
    public static void main(String[] args) {
       // Prueba de Linked List como Queue
       Restaurante restaurante = new Restaurante();
-      Queue<Comanda> C =  restaurante.Cocina;
+      Queue<Comanda> C =  restaurante.getCocina();
 
       C.add(new Comanda("Comida 1"));
       C.add(new Comanda("Comida 2"));
@@ -183,6 +212,15 @@ class Test {
       System.out.println(C.peek());
       C.remove();
       System.out.println(C.peek());
+
+      restaurante.AgregarEmpleado( // Agregar Empleado
+              "Angel",
+              "Castillo",
+              "NASDAS12349",
+              "Cocinero"
+      );
+
+      System.out.println(restaurante.getEmpleado("Angel", "Castillo")); // Busqueda por Nombre y Apellido
 
       /*
       Parece que hay múltiples implementaciones de linked list
