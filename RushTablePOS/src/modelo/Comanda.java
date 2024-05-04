@@ -11,11 +11,13 @@ public class Comanda {
     private String id;
     private LocalTime tiempoEnvio;
     public ArrayList<ItemMenu> itemsComanda;
+    public Mesero mesero;
 
     // Constructor
-    public Comanda(String id) {
+    public Comanda(String id, Mesero mesero) {
         this.id = id;
         this.itemsComanda = new ArrayList<>();
+        this.mesero = mesero;
     }
 
     // Métodos especiales
@@ -35,12 +37,12 @@ public class Comanda {
     }
 
     // Método para enviar la comanda al restaurante
-   public void mandarComanda(Restaurante restaurante) {
+   public void mandarComanda(Restaurante restaurante, Comanda comanda) {
     try {
         Comanda comandaCocina = new Comanda("Cocina-" + id);
         Comanda comandaBarra = new Comanda("Barra-" + id);
 
-        for (ItemMenu item : itemsComanda) {
+        for (ItemMenu item : comanda.itemsComanda) {
             if (esComida(item)) {
                 comandaCocina.agregarElemento(item);
             } else {
