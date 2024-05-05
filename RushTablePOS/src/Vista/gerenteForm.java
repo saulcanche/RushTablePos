@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import modelo.ItemMenu;
 
 /**
- *
  * @author Octavio
- */
+ **/
 public class gerenteForm extends javax.swing.JFrame {
 
     /**

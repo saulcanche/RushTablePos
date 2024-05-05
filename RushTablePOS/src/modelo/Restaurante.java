@@ -112,7 +112,7 @@ public class Restaurante {
          // generar new id y new userCode
 
          Random random_generator = new Random();
-         int new_id = random_generator.nextInt(190000, 2999999);
+         int new_id = random_generator.nextInt(2999999);
          int new_userCode = userCodeCounter++;
          Autoridad aut = Autoridad.LOW;
 
@@ -208,8 +208,8 @@ class Test {
       Restaurante restaurante = new Restaurante();
       Queue<Comanda> C =  restaurante.getCocina();
 
-      C.add(new Comanda("Comida 1"));
-      C.add(new Comanda("Comida 2"));
+      // C.add(new Comanda("Comida 1"));
+      // C.add(new Comanda("Comida 2"));
 
       System.out.println(C.peek());
       C.remove();
@@ -223,8 +223,6 @@ class Test {
       );
 
       System.out.println(restaurante.getEmpleado("Angel", "Castillo")); // Busqueda por Nombre y Apellido
-
-      restaurante.AgregarEmpleado(null, null, null, null);
 
       /*
       Parece que hay múltiples implementaciones de linked list

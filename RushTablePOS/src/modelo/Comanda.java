@@ -37,10 +37,10 @@ public class Comanda {
     }
 
     // Método para enviar la comanda al restaurante
-   public void mandarComanda(Restaurante restaurante, Comanda comanda) {
+   public void mandarComanda(Restaurante restaurante, Comanda comanda, Mesero mesero) {
     try {
-        Comanda comandaCocina = new Comanda("Cocina-" + id);
-        Comanda comandaBarra = new Comanda("Barra-" + id);
+        Comanda comandaCocina = new Comanda("Cocina-" + id, mesero);
+        Comanda comandaBarra = new Comanda("Barra-" + id, mesero);
 
         for (ItemMenu item : comanda.itemsComanda) {
             if (esComida(item)) {
