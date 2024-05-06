@@ -56,19 +56,19 @@ public class Mesero extends Empleado{
         System.out.println("Error al añadir un elemento a la comanda: " + e.getMessage());
     }
 }
-    public void mandarComanda(Restaurante restaurante) {
+    public void mandarComanda(Restaurante restaurante, Comanda comanda, Cuenta cuenta) {
     try {
         // Verificar si hay una comanda activa
-        if (this.comanda.itemsComanda.isEmpty()) {
+        if (comanda.itemsComanda.isEmpty()) {
             System.out.println("No hay elementos en la comanda para enviar.");
             return;
         }
 
         // Enviar la comanda al restaurante
-        comanda.mandarComanda(restaurante, this.comanda, (Mesero)null); // Falta añadir mesero de manera correcta !!!! 
+        comanda.mandarComanda(restaurante, this.comanda, this); // Falta añadir mesero de manera correcta !!!! 
         
         // Añadir los elementos de la comanda a la cuenta 
-        for(ItemMenu item : comanda.itemsComanda) { comanda.agregarElemento(item); }
+        for(ItemMenu item : comanda.itemsComanda) { cuenta.agregarItemCuenta(item);}
         // Vaciar la comanda después de enviarla
         comanda.itemsComanda.clear();
         System.out.println("La comanda ha sido enviada al restaurante.");
