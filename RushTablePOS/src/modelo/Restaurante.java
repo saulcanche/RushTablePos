@@ -112,7 +112,7 @@ public class Restaurante {
          // generar new id y new userCode
 
          Random random_generator = new Random();
-         int new_id = random_generator.nextInt(190000, 2999999);
+         int new_id = random_generator.nextInt(2999999);
          int new_userCode = userCodeCounter++;
          Autoridad aut = Autoridad.LOW;
 
