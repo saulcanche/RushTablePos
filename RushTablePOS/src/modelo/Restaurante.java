@@ -203,17 +203,25 @@ class Test {
       funcionamiento.
     */
    public static void main(String[] args) {
-      Empleado empleado = new Empleado(100, 0, null, null, null, null, 0, 0, null);
+      
+      Empleado empleado = new Empleado (
+         100,
+         0,
+         null,
+         null,
+         null,
+         null,
+         0,
+         0,
+         null
+      );
+
       // Prueba de Linked List como Queue
       Restaurante restaurante = new Restaurante();
       Queue<Comanda> C =  restaurante.getCocina();
 
-      C.add(new Comanda("Comida 1"));
-      C.add(new Comanda("Comida 2"));
-
-      System.out.println(C.peek());
-      C.remove();
-      System.out.println(C.peek());
+      // C.add(new Comanda("Comida 1"));
+      // C.add(new Comanda("Comida 2"));
 
       restaurante.AgregarEmpleado( // Agregar Empleado
               "Angel",
@@ -223,8 +231,6 @@ class Test {
       );
 
       System.out.println(restaurante.getEmpleado("Angel", "Castillo")); // Busqueda por Nombre y Apellido
-
-      restaurante.AgregarEmpleado(null, null, null, null);
 
       /*
       Parece que hay múltiples implementaciones de linked list

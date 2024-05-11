@@ -1,10 +1,11 @@
 package modelo;
 
+import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Empleado implements Nomina{
+public class Empleado implements Nomina, Serializable{
     private int id;
     private int userCode;
     private String nombre;
@@ -186,7 +187,7 @@ public class Empleado implements Nomina{
 
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", userCode=" + userCode + ", nombre=" + nombre + ", apellido=" + apellido + ", NSS=" + NSS + ", autoridad=" + autoridad + ", antiguedad=" + antiguedad + ", diasVacaciones=" + diasVacaciones + ", pagoQuincenal=" + pagoQuincenal + ", rol=" + rol + ", horarioEntrada=" + horarioEntrada + ", horaInicioJornada=" + horaInicioJornada + ", horaFinJornada=" + horaFinJornada + ", tiempoTrabajoDia=" + tiempoTrabajoDia + ", tiempoTrabajoQuincena=" + tiempoTrabajoQuincena + '}';
+        return "Empleado { " + " id = " + id + ", userCode = " + userCode + ", nombre = " + nombre + ", apellido = " + apellido + ", NSS = " + NSS + ", autoridad = " + autoridad + ", antiguedad = " + antiguedad + ", diasVacaciones = " + diasVacaciones + ", pagoQuincenal = " + pagoQuincenal + ", rol = " + rol + ", horarioEntrada = " + horarioEntrada + ", horaInicioJornada = " + horaInicioJornada + ", horaFinJornada = " + horaFinJornada + ", tiempoTrabajoDia = " + tiempoTrabajoDia + ", tiempoTrabajoQuincena = " + tiempoTrabajoQuincena + " } ";
     }
 
     @Override
