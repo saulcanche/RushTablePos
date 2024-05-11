@@ -54,21 +54,26 @@ import java.time.LocalTime;
     }    
 
     public void ModificarMenu() {
-        /*  */
+        /* Como trabajamos con el menu ??? Creamos una clase para menu ??? */
     } 
 
     public void AccederVentas() {
         Restaurante r = this.restaurante; 
         r.GenerarInformeDeVentas();
-
         /* Mostrar tabla de informe de ventas en GUI */
     }
 
     public void GestionarHorarios() {
-
+        /* 
+         * Como vamos manejar los horarios?
+         * Tenemos que crear una tabla para la vista de gerente?
+         * Usaremos las clases para manejar tiempo en Java???
+         */
     }
 
     public void GestionarInventario() {
-        
+        /* 
+         * 
+         */
     }
 }
