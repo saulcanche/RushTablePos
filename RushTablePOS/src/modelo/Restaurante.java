@@ -1,6 +1,7 @@
 
 package modelo;
 
+import Controlador.main;
 import java.util.*;
 
 /**
@@ -119,21 +120,44 @@ public class Restaurante {
          if (Objects.equals(rol, "Supervisor")) aut = Autoridad.HIGH;
          else if (Objects.equals(rol, "Gerente")) aut = Autoridad.MID;
 
-         empleados.add (
-                 new Empleado (
-                         new_id,
-                         new_userCode,
-                         nombre,
-                         apellido,
-                         NSS,
-                         aut,
-                         0,
-                         1,
-                         rol
-                 )
-         );
+          switch (rol) {
+              case "Supervisor":
+                  empleados.add(new Supervisor(new_id, new_userCode, nombre, apellido, NSS,aut,0,1));
+                  break;
+              case "Gerente":
+                  empleados.add(new Gerente(0, 0, this, new_id, new_userCode, nombre, apellido, NSS, aut, 0, 1));
+                  break;
+              case "Cocinero":
+                  empleados.add(new Cocinero(100,new_id,new_userCode,nombre,apellido,NSS,aut,0,1)); 
+                  break;
+              case "Bartender":
+                  empleados.add(new Bartender(100,new_id,new_userCode,nombre,apellido,NSS,aut,0,1));
+                  break;
+              case "Mesero":
+                  empleados.add(new Mesero(100,new_id,new_userCode,nombre,apellido,NSS,aut,0,1));
+                  break;
+              default:
+                  throw new AssertionError();
+          }
 
          System.out.println("Your new employee has the id : " + new_id + " and its user code is : " + new_userCode);
+
+      }
+      catch (Exception e) { System.out.println("Error al agregar empleado: " + e.getMessage()); }
+   }
+   
+   public void AgregarEmpleado(String nombre, String apellido, String NSS, String rol, int id) {
+      try {
+         int new_userCode = userCodeCounter++;
+         
+         Autoridad aut = Autoridad.LOW;
+         if (Objects.equals(rol, "Supervisor")) aut = Autoridad.HIGH;
+         else if (Objects.equals(rol, "Gerente")) aut = Autoridad.MID;
+
+          
+        empleados.add(new Mesero(100,id,new_userCode,nombre,apellido,NSS,aut,0,1));;
+
+         System.out.println("Your new employee has the id : " + id + " and its user code is : " + new_userCode);
 
       }
       catch (Exception e) { System.out.println("Error al agregar empleado: " + e.getMessage()); }

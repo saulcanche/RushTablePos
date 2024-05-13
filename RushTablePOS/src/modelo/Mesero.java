@@ -19,7 +19,7 @@ public class Mesero extends Empleado{
         this.ventaTotal = 0;
         this.CuentasAbiertas = new ArrayList<>();
         this.comanda = new Comanda(String.valueOf(id), this);
-        this.itemsVendidos = new ArrayList<>();;
+        this.itemsVendidos = new ArrayList<>();
     }
 
     public void registrarPagoCuenta(Cuenta cuenta){

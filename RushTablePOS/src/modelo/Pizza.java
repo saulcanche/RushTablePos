@@ -14,12 +14,14 @@ public class Pizza extends ItemMenu{
     private Boolean esDelgada;
     private boolean esCrujiente;
 
-    public Pizza(String tamano, Boolean esDelgada, boolean esCrujiente, String id, String nombre, String categoria, String descripcion, Duration timeForPreparation, LocalTime sendTime, LocalTime timeProgramed, String status, double precio, boolean isOutStock, ArrayList<String> mensajes) {
-        super(id, nombre, categoria, descripcion, timeForPreparation, sendTime, timeProgramed, status, precio, isOutStock, mensajes);
+    public Pizza(String tamano, Boolean esDelgada, boolean esCrujiente, String nombre, String categoria, String descripcion, double precio, int mesa) {
+        super(nombre, categoria, descripcion, precio,mesa);
         this.tamano = tamano;
         this.esDelgada = esDelgada;
         this.esCrujiente = esCrujiente;
     }
+
+    
 
     
     

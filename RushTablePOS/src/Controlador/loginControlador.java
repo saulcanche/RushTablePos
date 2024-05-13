@@ -8,11 +8,13 @@ import Vista.superForm;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
+import modelo.Supervisor;
 
 public class loginControlador {
     Empleado local;
     int contador;
     boolean bandera = false;
+    
     
     public void permitido(int id, int usercode, JFrame login){
         for (contador = 0; contador < main.restaurante.empleados.size(); contador++) {
@@ -40,6 +42,8 @@ public class loginControlador {
                         }else {
                             JOptionPane.showMessageDialog(null, "Usuario sin rol", "Error", JOptionPane.INFORMATION_MESSAGE);
                         }
+                        
+                        
                     } 
                 }
             }
