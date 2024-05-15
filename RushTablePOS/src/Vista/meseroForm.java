@@ -169,7 +169,9 @@ public class meseroForm extends javax.swing.JFrame {
     private void btnPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagoActionPerformed
         if(!lMesasAsignadas.isSelectionEmpty()){
             if(JOptionPane.showConfirmDialog(null, "Confirmar el pago", "Alerta ",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE) == 0){
-                controlador.cerrarCuenta(lMesasAsignadas.getSelectedIndex(),tbEstadoPedido);
+                controlador.cerrarCuenta(lMesasAsignadas.getSelectedIndex(),tbEstadoPedido,lMesasAsignadas);
+                controlador.listaTickets(tbEstadoPedido);
+                controlador.listaCuentas(lMesasAsignadas);
             }
         }
     }//GEN-LAST:event_btnPagoActionPerformed

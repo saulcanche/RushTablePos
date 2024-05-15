@@ -54,6 +54,8 @@ public class ticketForm extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        lsCuentas.setFixedCellHeight(20);
+        lsCuentas.setFixedCellWidth(90);
         lsCuentas.setMaximumSize(new java.awt.Dimension(103, 103));
         lsCuentas.setMinimumSize(new java.awt.Dimension(103, 103));
         lsCuentas.setPreferredSize(new java.awt.Dimension(103, 103));
@@ -180,7 +182,7 @@ public class ticketForm extends javax.swing.JFrame {
         }else {
             categoria = "Bebida";
         }
-        String mesa = String.valueOf(lsCuentas.getSelectedValue());
+        String mesa = String.valueOf(lsCuentas.getSelectedIndex());
         controlador.agregarItem(nombreTf.getText(), categoria, tfDescripcion.getText(), Double.parseDouble(tfPrecio.getText()), Integer.parseInt(mesa), lsCuentas.getSelectedIndex());
         new meseroForm().setVisible(true);
         this.dispose();

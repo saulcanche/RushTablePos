@@ -3,6 +3,7 @@ package modelo;
 
 import Controlador.main;
 import java.util.*;
+import javax.swing.plaf.synth.SynthGraphicsUtils;
 
 /**
  * @author Octavio
@@ -45,6 +46,23 @@ public class Restaurante {
       setBarra(Barra);
       setCocina(Cocina);
    }
+           
+   public ItemMenu getItemMenu(int mesa){
+       ArrayList<Mesero> listaMeseros = new ArrayList<Mesero>();
+       for(int i = 0; i<empleados.size(); i++){
+           if(empleados.get(i).getRol()=="Mesero"){
+               listaMeseros.add((Mesero)empleados.get(i));
+           }
+       }
+       for(int i = 0; i<listaMeseros.size() ;i++){
+           for(int j = 0; j<listaMeseros.get(i).getItemsVendidos().size(); j++){
+               if(listaMeseros.get(i).getItemsVendidos().get(j).getMesa()==mesa){
+                   return listaMeseros.get(i).getItemsVendidos().get(j);
+               }
+           }
+       }
+       return null;
+   }
 
    public ArrayList<Cuenta> getCuentasAbiertas() { return cuentasAbiertas; }
    public Queue<Comanda> getCocina() { return Cocina; }
@@ -79,6 +97,10 @@ public class Restaurante {
       }
       System.out.println("Error al crear restaurante: CuentasHoy = null !!!!");
       System.exit(-1);
+   }
+   
+   public void agregarCuenta(Cuenta cuenta){
+       this.cuentasAbiertas.add(cuenta);
    }
 
    public void setDescuentos(ArrayList<Descuento> D) {
@@ -146,22 +168,41 @@ public class Restaurante {
       catch (Exception e) { System.out.println("Error al agregar empleado: " + e.getMessage()); }
    }
    
-   public void AgregarEmpleado(String nombre, String apellido, String NSS, String rol, int id) {
+   public void AgregarEmpleado(String nombre, String apellido, String NSS, String rol, int idLocal) {
       try {
-         int new_userCode = userCodeCounter++;
          
+         int new_userCode = userCodeCounter++;
          Autoridad aut = Autoridad.LOW;
+
          if (Objects.equals(rol, "Supervisor")) aut = Autoridad.HIGH;
          else if (Objects.equals(rol, "Gerente")) aut = Autoridad.MID;
 
-          
-        empleados.add(new Mesero(100,id,new_userCode,nombre,apellido,NSS,aut,0,1));;
+          switch (rol) {
+              case "Supervisor":
+                  empleados.add(new Supervisor(idLocal, new_userCode, nombre, apellido, NSS,aut,0,1));
+                  break;
+              case "Gerente":
+                  empleados.add(new Gerente(0, 0, this, idLocal, new_userCode, nombre, apellido, NSS, aut, 0, 1));
+                  break;
+              case "Cocinero":
+                  empleados.add(new Cocinero(100,idLocal,new_userCode,nombre,apellido,NSS,aut,0,1)); 
+                  break;
+              case "Bartender":
+                  empleados.add(new Bartender(100,idLocal,new_userCode,nombre,apellido,NSS,aut,0,1));
+                  break;
+              case "Mesero":
+                  empleados.add(new Mesero(100,idLocal,new_userCode,nombre,apellido,NSS,aut,0,1));
+                  break;
+              default:
+                  throw new AssertionError();
+          }
 
-         System.out.println("Your new employee has the id : " + id + " and its user code is : " + new_userCode);
+         System.out.println("Your new employee has the id : " + idLocal + " and its user code is : " + new_userCode);
 
       }
       catch (Exception e) { System.out.println("Error al agregar empleado: " + e.getMessage()); }
    }
+  
 
    public void EliminarEmpleado(int id) {
       try { if (!empleados.removeIf(a -> a.getId() == id)) System.out.println("No existe el empleado.\n"); }
@@ -195,6 +236,16 @@ public class Restaurante {
          System.out.println("Error while searching employee by name.");
          return null;
       }
+   }
+   
+   public ArrayList<Mesero> getMeseros(){
+       ArrayList<Mesero> lista = new ArrayList<Mesero>();
+       for(int i = 0; i < main.restaurante.getEmpleados().size(); i++){
+           if(main.restaurante.getEmpleados().get(i).getRol()=="Mesero"){
+               lista.add((Mesero) main.restaurante.getEmpleados().get(i));
+           }
+       }
+       return lista;
    }
 
    public void GenerarInformeDeVentas() {
