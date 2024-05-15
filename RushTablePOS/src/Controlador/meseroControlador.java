@@ -17,15 +17,13 @@ import modelo.Mesero;
  */
 public class meseroControlador {
     Mesero actual = (Mesero)main.restaurante.getEmpleado(main.idActual);
-
     DefaultListModel modeloLista = new DefaultListModel();
     
     public void listaCuentas(JList objetivo){
-        //String lista[] = null;
-        //ArrayList<Cuenta> copia = actual.getCuentasAbiertas();
+        modeloLista.removeAllElements();
         
         for(int i = 0; i < actual.getCuentasAbiertas().size(); i++){
-            modeloLista.addElement("a");
+            modeloLista.addElement(actual.getCuentasAbiertas().get(i).getId());
         }
         
         objetivo.setModel(modeloLista);
@@ -37,19 +35,34 @@ public class meseroControlador {
         
         titulos.add("Nombre");
         titulos.add("Mesa");
-        titulos.add("Estado");
+        titulos.add("Costo");
         
         for(int i=0; i<actual.getItemsVendidos().size(); i++){
-            Vector<Object> filas = new Vector<Object>();
             
-            filas.add(actual.getItemsVendidos().get(i).getNombre());
-            filas.add(actual.getItemsVendidos().get(i).getMesa());
-            filas.add(actual.getItemsVendidos().get(i).getStatus());
+            if(actual.getItemsVendidos().get(i).getStatus()==false ){
+                Vector<Object> filas = new Vector<Object>();
+
+                filas.add(actual.getItemsVendidos().get(i).getNombre());
+                filas.add(actual.getItemsVendidos().get(i).getMesa());
+                filas.add(actual.getItemsVendidos().get(i).getPrecio());
+
+                data.add(filas);
+            }
             
-            data.add(filas);
         }
         
         DefaultTableModel modelPedidos = new DefaultTableModel(data,titulos);
         tablaPedidos.setModel(modelPedidos);
+    }
+    
+    public void cerrarCuenta(int index, JTable tabla){
+        Cuenta cuenta = actual.getCuentasAbiertas().get(index);
+        for(int i = 0; i < actual.getItemsVendidos().size(); i++){
+            if(cuenta.getId()==actual.getItemsVendidos().get(index).getMesa()){
+                actual.getItemsVendidos().get(index).setStatus(true);
+            }
+        }
+        
+        listaTickets(tabla);
     }
 }

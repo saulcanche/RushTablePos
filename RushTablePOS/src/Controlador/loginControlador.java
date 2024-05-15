@@ -33,17 +33,12 @@ public class loginControlador {
                         }else if(local.getRol()=="Mesero"){
                             new meseroForm().setVisible(true);
                             login.dispose();
-                        }else if(local.getRol()=="Cocinero"){
-                            new prodForm().setVisible(true);
-                            login.dispose();
-                        }else if(local.getRol()=="Bartender"){
+                        }else if(local.getRol()=="Preparacion"){
                             new prodForm().setVisible(true);
                             login.dispose();
                         }else {
                             JOptionPane.showMessageDialog(null, "Usuario sin rol", "Error", JOptionPane.INFORMATION_MESSAGE);
                         }
-                        
-                        
                     } 
                 }
             }

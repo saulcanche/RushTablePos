@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Cuenta {
     private Mesero mesero;
-    private String id;
+    private int id;
     private double subtotal;
     private double IVA;
     private double total;
@@ -36,7 +36,7 @@ public class Cuenta {
     }
 
     // Constructor
-    public Cuenta(String id, LocalDate date, LocalTime time) {
+    public Cuenta(int id, LocalDate date, LocalTime time) {
         this.id = id;
         this.date = date;
         this.time = time;
@@ -48,7 +48,7 @@ public class Cuenta {
         this.mesero = waiter;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -94,7 +94,7 @@ public class Cuenta {
         return mesero;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

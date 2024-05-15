@@ -22,6 +22,11 @@ public class Mesero extends Empleado{
         this.itemsVendidos = new ArrayList<>();
     }
 
+    public void agregarItem(ItemMenu nuevo){
+        itemsVendidos.add(nuevo);
+    }
+    
+    
     public void registrarPagoCuenta(Cuenta cuenta){
         cuenta.setIsPayed(true);
         ventaTotal += cuenta.getTotal();
@@ -87,6 +92,10 @@ public class Mesero extends Empleado{
     
     public void verCuentasAbiertas(){
 
+    }
+    
+    public void agregarCuenta(Cuenta cuenta){
+        this.CuentasAbiertas.add(cuenta);
     }
 
     public double getPagoPorHora() { return this.pagoPorHora; }
