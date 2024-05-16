@@ -39,25 +39,27 @@ public class prodControlador {
                     Vector<Object> filas = new Vector<Object>();
                     filas.add(listaMenu.get(i).getNombre());
                     filas.add(listaMenu.get(i).getDescripcion());
-                    filas.add(listaMenu.get(i).getMesa());
+                    filas.add(listaMenu.get(i).getId());
                     dataAlimentos.add(filas);
                 } else{
                     Vector<Object> filas = new Vector<Object>();
                     filas.add(listaMenu.get(i).getNombre());
                     filas.add(listaMenu.get(i).getDescripcion());
-                    filas.add(listaMenu.get(i).getMesa());
+                    filas.add(listaMenu.get(i).getId());
                     dataBebidas.add(filas);
                 }
             }   
         }
+        modeloAlimentos.setRowCount(0);
         modeloAlimentos = new DefaultTableModel(dataAlimentos,titulos);
         alimentos.setModel(modeloAlimentos);
+        modeloBebidas.setRowCount(0);
         modeloBebidas = new DefaultTableModel(dataBebidas,titulos);
         bebidas.setModel(modeloBebidas);
     }
     
     public ItemMenu getItem(JTable tabla,int columna){
-        int mesa = Integer.parseInt( tabla.getModel().getValueAt(columna, 2).toString() );
+        String mesa = tabla.getModel().getValueAt(columna, 2).toString();
         return main.restaurante.getItemMenu(mesa);
     }
     

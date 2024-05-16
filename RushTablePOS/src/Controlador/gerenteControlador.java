@@ -2,6 +2,7 @@ package Controlador;
 
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.ItemMenu;
@@ -36,5 +37,20 @@ public class gerenteControlador {
         tabla.setModel(modelo);
         }
 
-    
+    public void initCB(JCheckBox carne, JCheckBox hamburguesa, JCheckBox pasta, JCheckBox pizza){
+        for(int i = 0; i<main.listaItems.size(); i++){
+            if(main.listaItems.get(i).getNombre()=="Carne"){
+                carne.setSelected(true);
+            }
+            if(main.listaItems.get(i).getNombre()=="Hamburguesa"){
+                hamburguesa.setSelected(true);
+            }
+            if(main.listaItems.get(i).getNombre()=="Pasta"){
+                pasta.setSelected(true);
+            }
+            if(main.listaItems.get(i).getNombre()=="Pizza"){
+                pizza.setSelected(true);
+            }
+        }
+    }
 }

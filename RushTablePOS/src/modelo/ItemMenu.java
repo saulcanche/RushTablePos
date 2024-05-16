@@ -20,7 +20,8 @@ public class ItemMenu {
 
     // Constructor
 
-    public ItemMenu(String nombre, String categoria, String descripcion, double precio, int mesa) {
+    public ItemMenu(String id, String nombre, String categoria, String descripcion, double precio, int mesa) {
+        this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
         this.descripcion = descripcion;

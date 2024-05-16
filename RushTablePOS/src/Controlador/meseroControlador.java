@@ -25,7 +25,7 @@ public class meseroControlador {
         modeloLista.removeAllElements();
         
         for(int i = 0; i < actual.getCuentasAbiertas().size(); i++){
-            modeloLista.addElement(actual.getCuentasAbiertas().get(i).getMesa());
+            modeloLista.addElement(actual.getCuentasAbiertas().get(i).getId());
         }
         
         objetivo.setModel(modeloLista);
@@ -44,7 +44,7 @@ public class meseroControlador {
             if(actual.getItemsVendidos().get(i).getStatus()!=3){
                 Vector<Object> filas = new Vector<Object>();
                 filas.add(actual.getItemsVendidos().get(i).getNombre());
-                filas.add(actual.getItemsVendidos().get(i).getMesa());
+                filas.add(actual.getItemsVendidos().get(i).getId());
                 filas.add(actual.getItemsVendidos().get(i).getPrecio());
                 switch (actual.getItemsVendidos().get(i).getStatus()) {
                     case 0:
@@ -68,20 +68,39 @@ public class meseroControlador {
     }
     
     public void cerrarCuenta(int index, JTable tabla, JList lista){
-        
+        int contador = 0;
+        boolean borrar = false;
         
         for(int i = 0; i < actual.getItemsVendidos().size(); i++){
-            if(index==actual.getItemsVendidos().get(i).getMesa()){
-                
-                if(actual.getItemsVendidos().get(index).getStatus()==0){
+            if(index==actual.getItemsVendidos().get(i).getMesa()&&actual.getItemsVendidos().get(i).getStatus()!=3){
+                contador++;
+                if(actual.getItemsVendidos().get(i).getStatus()==0){
                     JOptionPane.showMessageDialog(null, "Alimentos aun no terminados", "Error", JOptionPane.INFORMATION_MESSAGE);
+                    break;
                 }else{
-                    actual.getItemsVendidos().get(index).setStatus(3);
-                    
-                   actual.getCuentasAbiertas().remove(index);
-                   listaCuentas(lista);
-                   listaTickets(tabla);   
+                    actual.getItemsVendidos().get(i).setStatus(3);
+                    borrar = true;
                 }
+            }
+        }
+        
+        if(contador==0){
+            JOptionPane.showMessageDialog(null, "La cuenta no tiene ordenes registradas");
+        }
+        if(borrar){
+            actual.getCuentasAbiertas().remove(index);
+            listaCuentas(lista);
+            listaTickets(tabla);   
+            actualizarCuentas(index);
+        }
+    }
+    
+    public void actualizarCuentas(int index){
+        int indexActual;
+        for(int i =0;i<actual.getItemsVendidos().size();i++){
+            indexActual = actual.getItemsVendidos().get(i).getMesa();
+            if(indexActual==index){
+                actual.getItemsVendidos().get(i).setMesa(indexActual-1);
             }
         }
     }

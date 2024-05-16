@@ -31,6 +31,7 @@ public class loginControlador {
                             new gerenteForm().setVisible(true);
                             login.dispose();
                         }else if(local.getRol()=="Mesero"){
+                            main.idActual = local.getId();
                             new meseroForm().setVisible(true);
                             login.dispose();
                         }else if(local.getRol()=="Preparacion"){

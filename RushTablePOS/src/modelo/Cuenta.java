@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Cuenta {
     private Mesero mesero;
+    private String id;
     private int mesa;
     private double subtotal;
     private double IVA;
@@ -36,7 +37,8 @@ public class Cuenta {
     }
 
     // Constructor
-    public Cuenta(int mesa, LocalDate date, LocalTime time) {
+    public Cuenta(String id, int mesa, LocalDate date, LocalTime time) {
+        this.id = id;
         this.mesa = mesa;
         this.date = date;
         this.time = time;
@@ -133,6 +135,15 @@ public class Cuenta {
     public ArrayList<ItemMenu> getItemsConsumidos() {
         return itemsConsumidos;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     
 }
 

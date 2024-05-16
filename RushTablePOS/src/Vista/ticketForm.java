@@ -170,8 +170,8 @@ public class ticketForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuentaActionPerformed
-        String opcion = JOptionPane.showInputDialog("Ingrese la mesa");
-        controlador.agregarMesa(Integer.parseInt(opcion));
+        String id = JOptionPane.showInputDialog("Ingrese la mesa");
+        controlador.agregarCuenta(id);
         controlador.listaCuentas(lsCuentas);
     }//GEN-LAST:event_btnCuentaActionPerformed
 
@@ -182,8 +182,8 @@ public class ticketForm extends javax.swing.JFrame {
         }else {
             categoria = "Bebida";
         }
-        String mesa = String.valueOf(lsCuentas.getSelectedIndex());
-        controlador.agregarItem(nombreTf.getText(), categoria, tfDescripcion.getText(), Double.parseDouble(tfPrecio.getText()), Integer.parseInt(mesa), lsCuentas.getSelectedIndex());
+        String mesa = lsCuentas.getSelectedValue();
+        controlador.agregarItem(mesa, nombreTf.getText(), categoria, tfDescripcion.getText(), Double.parseDouble(tfPrecio.getText()),  lsCuentas.getSelectedIndex());
         new meseroForm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed

@@ -13,6 +13,7 @@ public class gerenteForm extends javax.swing.JFrame {
     public gerenteForm() {
         initComponents();
         controlador.inicializar(tbVendidos);
+        controlador.initCB(cbCarne,cbHamburguesa,cbPasta,cbPizza);
     }
 
     /**
@@ -165,16 +166,16 @@ public class gerenteForm extends javax.swing.JFrame {
         main.listaItems.clear();
         
         if(cbPizza.isSelected()){
-            itemsActivos.add(new ItemMenu("Pizza","Principal","Pizza de distintos tamaños y masas", 200,0));
+            itemsActivos.add(new ItemMenu("1","Pizza","Principal","Pizza de distintos tamaños y masas", 200,0));
         }
         if(cbPasta.isSelected()){
-            itemsActivos.add(new ItemMenu("Pasta","Principal","Pasta italiana", 150,0));
+            itemsActivos.add(new ItemMenu("2","Pasta","Principal","Pasta italiana", 150,0));
         }
         if(cbCarne.isSelected()){
-            itemsActivos.add(new ItemMenu("Carne","Principal","Corte de res", 300,0));
+            itemsActivos.add(new ItemMenu("3","Carne","Principal","Corte de res", 300,0));
         }
         if(cbHamburguesa.isSelected()){
-            itemsActivos.add(new ItemMenu("Hamburguesa","Principal","Hamburguesa de res ", 200,0));
+            itemsActivos.add(new ItemMenu("4","Hamburguesa","Principal","Hamburguesa de res ", 200,0));
         }
         
         main.listaItems.addAll(itemsActivos);

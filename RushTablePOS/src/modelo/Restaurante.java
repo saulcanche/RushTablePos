@@ -47,7 +47,7 @@ public class Restaurante {
       setCocina(Cocina);
    }
            
-   public ItemMenu getItemMenu(int mesa){
+   public ItemMenu getItemMenu(String mesa){
        ArrayList<Mesero> listaMeseros = new ArrayList<Mesero>();
        for(int i = 0; i<empleados.size(); i++){
            if(empleados.get(i).getRol()=="Mesero"){
@@ -56,7 +56,7 @@ public class Restaurante {
        }
        for(int i = 0; i<listaMeseros.size() ;i++){
            for(int j = 0; j<listaMeseros.get(i).getItemsVendidos().size(); j++){
-               if(listaMeseros.get(i).getItemsVendidos().get(j).getMesa()==mesa){
+               if(listaMeseros.get(i).getItemsVendidos().get(j).getId()==mesa){
                    return listaMeseros.get(i).getItemsVendidos().get(j);
                }
            }
