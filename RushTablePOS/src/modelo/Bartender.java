@@ -12,13 +12,15 @@ public class Bartender extends StaffPreparacion {
     
 
     @Override
-    ArrayList<Comanda> VerComanda() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    Comanda VerComanda(Restaurante restaurante) {
+        Comanda ultimaComanda = restaurante.getBarra().peek();
+        return ultimaComanda; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    void marcarComandaHecha() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    void marcarComandaHecha(Restaurante restaurante) {
+        restaurante.getBarra().remove();
+
     }
     
 }
