@@ -10,7 +10,7 @@ abstract class StaffPreparacion extends Empleado{
         this.pagoPorHora = pagoPorHora;
     }
     
-    abstract ArrayList<Comanda> VerComanda();
-    abstract void marcarComandaHecha();
+    abstract Comanda VerComanda(Restaurante restaurante);
+    abstract void marcarComandaHecha(Restaurante restaurante);
 
 }
