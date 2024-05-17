@@ -1,20 +1,19 @@
 
 package Vista;
 
+import Controlador.gerenteControlador;
 import Controlador.main;
 import java.util.ArrayList;
 import modelo.ItemMenu;
 
-/**
- * @author Octavio
- **/
-public class gerenteForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form gerenteForm
-     */
+public class gerenteForm extends javax.swing.JFrame {
+    gerenteControlador controlador = new gerenteControlador();
+    
     public gerenteForm() {
         initComponents();
+        controlador.inicializar(tbVendidos);
+        controlador.initCB(cbCarne,cbHamburguesa,cbPasta,cbPizza);
     }
 
     /**
@@ -34,13 +33,15 @@ public class gerenteForm extends javax.swing.JFrame {
         cbCarne = new javax.swing.JCheckBox();
         cbHamburguesa = new javax.swing.JCheckBox();
         btnAplicar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbVendidos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Gerentes");
-
-        jPanel1.setBackground(new java.awt.Color(43, 45, 47));
 
         jLabel2.setText("Modificar menú");
 
@@ -95,27 +96,65 @@ public class gerenteForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Items vendidos");
+
+        tbVendidos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tbVendidos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addContainerGap(457, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
+                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -127,20 +166,25 @@ public class gerenteForm extends javax.swing.JFrame {
         main.listaItems.clear();
         
         if(cbPizza.isSelected()){
-            itemsActivos.add(new ItemMenu("Pizza","Principal","Pizza de distintos tamaños y masas", 200));
+            itemsActivos.add(new ItemMenu("1","Pizza","Principal","Pizza de distintos tamaños y masas", 200,0));
         }
         if(cbPasta.isSelected()){
-            itemsActivos.add(new ItemMenu("Pasta","Principal","Pasta italiana", 150));
+            itemsActivos.add(new ItemMenu("2","Pasta","Principal","Pasta italiana", 150,0));
         }
         if(cbCarne.isSelected()){
-            itemsActivos.add(new ItemMenu("Carne","Principal","Corte de res", 300));
+            itemsActivos.add(new ItemMenu("3","Carne","Principal","Corte de res", 300,0));
         }
         if(cbHamburguesa.isSelected()){
-            itemsActivos.add(new ItemMenu("Hamburguesa","Principal","Hamburguesa de res ", 200));
+            itemsActivos.add(new ItemMenu("4","Hamburguesa","Principal","Hamburguesa de res ", 200,0));
         }
         
         main.listaItems.addAll(itemsActivos);
     }//GEN-LAST:event_btnAplicarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        new loginForm().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,12 +224,16 @@ public class gerenteForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAplicar;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JCheckBox cbCarne;
     private javax.swing.JCheckBox cbHamburguesa;
     private javax.swing.JCheckBox cbPasta;
     private javax.swing.JCheckBox cbPizza;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbVendidos;
     // End of variables declaration//GEN-END:variables
 }

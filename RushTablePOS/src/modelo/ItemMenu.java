@@ -12,21 +12,25 @@ public class ItemMenu {
     private Duration timeForPreparation;
     private LocalTime sendTime;
     private LocalTime timeProgramed;
-    private String status;
+    private int status;
     private double precio;
     private boolean isOutStock;
     private ArrayList<String> mensajes;
+    private int mesa;
 
     // Constructor
 
-    public ItemMenu(String nombre, String categoria, String descripcion, double precio) {
+    public ItemMenu(String id, String nombre, String categoria, String descripcion, double precio, int mesa) {
+        this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.mesa = mesa;
+        this.status = 0;
     }
 
-    public ItemMenu(String id, String nombre, String categoria, String descripcion, Duration timeForPreparation, LocalTime sendTime, LocalTime timeProgramed, String status, double precio, boolean isOutStock, ArrayList<String> mensajes) {
+    public ItemMenu(String id, String nombre, String categoria, String descripcion, Duration timeForPreparation, LocalTime sendTime, LocalTime timeProgramed, int status, double precio, boolean isOutStock, ArrayList<String> mensajes) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -96,11 +100,11 @@ public class ItemMenu {
         this.timeProgramed = timeProgramed;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -134,6 +138,14 @@ public class ItemMenu {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public int getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(int mesa) {
+        this.mesa = mesa;
     }
     
     

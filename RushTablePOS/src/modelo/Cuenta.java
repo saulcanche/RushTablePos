@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Cuenta {
     private Mesero mesero;
     private String id;
+    private int mesa;
     private double subtotal;
     private double IVA;
     private double total;
@@ -36,8 +37,9 @@ public class Cuenta {
     }
 
     // Constructor
-    public Cuenta(String id, LocalDate date, LocalTime time) {
+    public Cuenta(String id, int mesa, LocalDate date, LocalTime time) {
         this.id = id;
+        this.mesa = mesa;
         this.date = date;
         this.time = time;
         this.itemsConsumidos = new ArrayList<>();
@@ -48,8 +50,8 @@ public class Cuenta {
         this.mesero = waiter;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setMesa(int mesa) {
+        this.mesa = mesa;
     }
 
     public void setSubtotal(double subtotal) {
@@ -94,8 +96,8 @@ public class Cuenta {
         return mesero;
     }
 
-    public String getId() {
-        return id;
+    public int getMesa() {
+        return mesa;
     }
 
     public double getSubtotal() {
@@ -133,6 +135,15 @@ public class Cuenta {
     public ArrayList<ItemMenu> getItemsConsumidos() {
         return itemsConsumidos;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     
 }
 
